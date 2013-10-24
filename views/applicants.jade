@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	.container
+		h1 Applicants
+		br
+		ul#applications.list-unstyled
+			each val in applicantPool
+				li.applicant.well
+					h2
+						a.appLink(href='/#{val._id}')= val.name
+			if applicantPool.length === 0
+				h3 No Applicants
